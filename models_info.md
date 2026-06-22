@@ -1,53 +1,105 @@
-# Models Information
+# Trained Models
 
-## 1. Rider Safety Model
-
-Purpose:
-
-* Helmet Detection
-* Triple Riding Detection
-
-Classes:
-
-* helmet
-* no_helmet
-* motorcycle
-* motorcyclist
-
----
-
-## 2. License Plate Detection Model
+## License Plate Detection
 
 Purpose:
 
-* License Plate Localization
+* Detect and localize vehicle number plates.
 
-Classes:
+Performance:
+
+* mAP50: 96.5%
+
+Detected Classes:
 
 * numberplate
 
 ---
 
-## 3. Wrong-Side Detection Model
+## Wrong-Side Detection
 
 Purpose:
 
-* Wrong Direction Vehicle Detection
+* Detect vehicles travelling in the wrong direction.
 
-Classes:
+Performance:
+
+* mAP50: 96.1%
+
+Detected Classes:
 
 * right-side
 * wrong-side
 
 ---
 
-## 4. Illegal Parking Detection Model
+## Illegal Parking Detection
 
 Purpose:
 
-* Parking Violation Detection
+* Detect parking violations.
 
-Classes:
+Performance:
+
+* mAP50: 87.7%
+
+Detected Classes:
 
 * Melanggar (Violation)
 * Tidak Melanggar (No Violation)
+
+---
+
+## Red Light Violation Detection
+
+Purpose:
+
+* Detect vehicles violating traffic signals.
+
+Performance:
+
+* mAP50: 88.5%
+
+Detected Classes:
+
+* Red Light Violation
+
+---
+
+## Rider Safety Detection
+
+Purpose:
+
+* Detect rider safety violations and motorcycle occupancy.
+
+Performance:
+
+* mAP50: 73.6%
+
+Detected Classes:
+
+* Helmet
+* No Helmet
+* Motorcycle
+* Motorcyclist
+
+Derived Violations:
+
+* No Helmet
+* Triple Riding (calculated from rider count)
+
+---
+
+## OCR-Based Number Plate Extraction
+
+Technology:
+
+* EasyOCR
+
+Purpose:
+
+* Extract vehicle registration numbers from detected number plate regions.
+
+Note:
+
+* OCR accuracy may vary depending on image resolution, lighting conditions, plate visibility, viewing angle, and motion blur.
