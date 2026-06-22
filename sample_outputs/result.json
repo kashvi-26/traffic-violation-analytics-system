@@ -1,0 +1,8 @@
+{
+    "vehicle_type": "Motorcycle",
+    "violations": [
+        "No Helmet",
+        "Triple Riding"
+    ],
+    "plate_number": "85"
+}
