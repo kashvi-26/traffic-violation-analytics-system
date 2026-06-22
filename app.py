@@ -117,3 +117,11 @@ def analyze_image(image_path):
     }
 
     return result
+
+if __name__ == "__main__":
+
+    image_path = "sample_inputs/sample_motorcycle.jpg"
+
+    result = analyze_image(image_path)
+
+    print(json.dumps(result, indent=4))
