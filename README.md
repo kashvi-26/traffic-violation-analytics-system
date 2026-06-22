@@ -157,6 +157,42 @@ traffic-violation-analytics-system/
 
 ---
 
+## Usage
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the Application
+
+Analyze any image using:
+
+```bash
+python app.py <image_path>
+```
+
+Example:
+
+```bash
+python app.py sample_inputs/sample_motorcycle.jpg
+```
+
+### Example Output
+
+```json
+{
+    "vehicle_type": "Motorcycle",
+    "violations": [
+        "No Helmet",
+        "Triple Riding"
+    ],
+    "plate_number": "Detected via OCR"
+}
+```
+
+
 ## Example JSON Output
 
 ```json
