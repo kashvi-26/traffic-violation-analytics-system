@@ -1,1 +1,21 @@
+AI Traffic Violation Analytics System
+
+Input Image
+↓
+YOLOv8 Detection Models
+├── Rider Safety Detection
+├── License Plate Detection
+├── Wrong Side Detection
+├── Red Light Detection
+└── Illegal Parking Detection
+↓
+Violation Analysis Engine
+↓
+OCR-Based Number Plate Extraction
+↓
+Evidence Image Generation
+↓
+JSON Report Generation
+↓
+PDF Report Generation
 
