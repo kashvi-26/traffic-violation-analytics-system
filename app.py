@@ -118,9 +118,15 @@ def analyze_image(image_path):
 
     return result
 
+import sys
+
 if __name__ == "__main__":
 
-    image_path = "sample_inputs/sample_motorcycle.jpg"
+    if len(sys.argv) != 2:
+        print("Usage: python app.py <image_path>")
+        exit()
+
+    image_path = sys.argv[1]
 
     result = analyze_image(image_path)
 
