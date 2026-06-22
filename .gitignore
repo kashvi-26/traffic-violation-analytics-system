@@ -12,3 +12,6 @@ output/
 reports/
 
 .env
+
+*.zip
+.DS_Store
