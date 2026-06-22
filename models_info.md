@@ -1,24 +1,53 @@
+# Models Information
 
-# Trained Models
+## 1. Rider Safety Model
 
-## License Plate Detection
-mAP50: 96.5%
+Purpose:
 
-## Wrong Side Detection
-mAP50: 96.1%
+* Helmet Detection
+* Triple Riding Detection
 
-## Illegal Parking Detection
-mAP50: 87.7%
+Classes:
 
-## Red Light Violation Detection
-mAP50: 88.5%
+* helmet
+* no_helmet
+* motorcycle
+* motorcyclist
 
-## Rider Safety Detection
-mAP50: 73.6%
+---
 
-Detected Classes:
-- Helmet
-- No Helmet
-- Motorcycle
-- Motorcyclist
-- Triple Riding
+## 2. License Plate Detection Model
+
+Purpose:
+
+* License Plate Localization
+
+Classes:
+
+* numberplate
+
+---
+
+## 3. Wrong-Side Detection Model
+
+Purpose:
+
+* Wrong Direction Vehicle Detection
+
+Classes:
+
+* right-side
+* wrong-side
+
+---
+
+## 4. Illegal Parking Detection Model
+
+Purpose:
+
+* Parking Violation Detection
+
+Classes:
+
+* Melanggar (Violation)
+* Tidak Melanggar (No Violation)
