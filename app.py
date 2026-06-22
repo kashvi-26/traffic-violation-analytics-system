@@ -7,6 +7,8 @@ import json
 # Load Models
 rider_model = YOLO("models/best_rider_safety.pt")
 plate_model = YOLO("models/best_license_plate.pt")
+wrong_side_model = YOLO("models/best_wrong_side.pt")
+parking_model = YOLO("models/best_parking.pt")
 
 reader = easyocr.Reader(['en'])
 
@@ -44,6 +46,35 @@ def extract_plate_number(image_path):
 
     return plate_text
 
+def detect_wrong_side(image_path):
+
+    results = wrong_side_model(image_path, conf=0.4)
+
+    for box in results[0].boxes:
+
+        cls = int(box.cls)
+
+        label = wrong_side_model.names[cls]
+
+        if label == "wrong-side":
+            return True
+
+    return False
+
+def detect_illegal_parking(image_path):
+
+    results = parking_model(image_path, conf=0.4)
+
+    for box in results[0].boxes:
+
+        cls = int(box.cls)
+
+        label = parking_model.names[cls]
+
+        if label == "Melanggar":
+            return True
+
+    return False
 
 def analyze_image(image_path):
 
@@ -70,6 +101,12 @@ def analyze_image(image_path):
 
     if motorcyclist_count >= 3:
         violations.append("Triple Riding")
+
+    if detect_wrong_side(image_path):
+        violations.append("Wrong Side Driving")
+
+    if detect_illegal_parking(image_path):
+        violations.append("Illegal Parking")
 
     plate_number = extract_plate_number(image_path)
 
