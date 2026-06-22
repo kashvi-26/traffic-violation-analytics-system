@@ -1,5 +1,9 @@
 # AI-Powered Traffic Violation Analytics System
 
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![YOLOv8](https://img.shields.io/badge/YOLOv8-Object_Detection-green)
+![EasyOCR](https://img.shields.io/badge/EasyOCR-OCR-orange)
+
 ## Overview
 
 AI-Powered Traffic Violation Analytics System is a computer vision-based solution designed to automatically detect traffic violations from road images using YOLOv8 object detection models and OCR techniques.
