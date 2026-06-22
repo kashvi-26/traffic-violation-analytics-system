@@ -23,8 +23,8 @@ The system identifies multiple traffic violations, localizes vehicle number plat
 
 ### License Plate Analysis
 
-* License Plate Localization
-* OCR-Based Number Plate Extraction
+* License Plate Localization using YOLOv8
+* OCR-Based Number Plate Extraction using EasyOCR
 
 ### Automated Reporting
 
@@ -102,6 +102,18 @@ PDF Report
 
 ---
 
+## Model Performance
+
+| Model                         | mAP50 |
+| ----------------------------- | ----- |
+| License Plate Detection       | 96.5% |
+| Wrong-Side Detection          | 96.1% |
+| Illegal Parking Detection     | 87.7% |
+| Red Light Violation Detection | 88.5% |
+| Rider Safety Detection        | 73.6% |
+
+---
+
 ## Sample Output
 
 ### Supported Violations
@@ -141,19 +153,23 @@ Refer to the `sample_outputs/` folder for example outputs.
 
 traffic-violation-analytics-system/
 
-├── app.py
+├── app.py 
+├── README.md 
+├── requirements.txt 
+├── models_info.md 
 
-├── README.md
+├── docs/ 
+│ ├── evidence_output.jpg 
+│ ├── json_output.png 
+│ └── pdf_output.png 
 
-├── requirements.txt
+├── sample_inputs/ 
 
-├── models_info.md
-
-├── docs/
-
-├── sample_inputs/
-
-└── sample_outputs/
+├── sample_outputs/ 
+│ ├── evidence.jpg 
+│ ├── result.json 
+│ └── Violation_Report.pdf 
+└── output/
 
 ---
 
@@ -179,19 +195,15 @@ Example:
 python app.py sample_inputs/sample_motorcycle.jpg
 ```
 
-### Example Output
+### Generated Outputs
 
-```json
-{
-    "vehicle_type": "Motorcycle",
-    "violations": [
-        "No Helmet",
-        "Triple Riding"
-    ],
-    "plate_number": "Detected via OCR"
-}
-```
+After execution, the system automatically generates:
 
+* `output/evidence.jpg`
+* `output/result.json`
+* `output/Violation_Report.pdf`
+
+---
 
 ## Example JSON Output
 
@@ -208,13 +220,21 @@ python app.py sample_inputs/sample_motorcycle.jpg
 
 ---
 
+## Notes
+
+* License plate localization is performed using a custom YOLOv8 model.
+* OCR-based plate extraction is integrated using EasyOCR.
+* OCR performance may vary depending on image quality, plate visibility, camera angle, lighting conditions, and motion blur.
+* Triple Riding detection is derived from rider count analysis.
+
+
+---
+
 ## Future Enhancements
 
 * Real-Time CCTV Integration
 * Video-Based Violation Detection
-* Vehicle Tracking
 * Automatic Challan Generation
-* Cloud Deployment
 
 ---
 
@@ -228,14 +248,6 @@ The system successfully performs:
 * Evidence image generation
 * Structured JSON report generation
 * PDF violation report generation
-
----
-
-## Notes
-
-- License plate localization is performed using a custom YOLOv8 model.
-- OCR-based plate extraction is integrated using EasyOCR.
-- OCR performance may vary depending on image resolution, plate visibility, camera angle, lighting conditions, and motion blur.
 
 ---
 
