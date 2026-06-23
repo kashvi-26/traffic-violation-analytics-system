@@ -151,25 +151,28 @@ Refer to the `sample_outputs/` folder for example outputs.
 
 ## Project Structure
 
+```text
 traffic-violation-analytics-system/
 
-├── app.py 
-├── README.md 
-├── requirements.txt 
-├── models_info.md 
+├── app.py
+├── README.md
+├── requirements.txt
+├── models_info.md
 
-├── docs/ 
-│ ├── evidence_output.jpg 
-│ ├── json_output.png 
-│ └── pdf_output.png 
+├── docs/
+│   ├── evidence_output.jpg
+│   ├── json_output.png
+│   └── pdf_output.png
 
-├── sample_inputs/ 
+├── sample_inputs/
 
-├── sample_outputs/ 
-│ ├── evidence.jpg 
-│ ├── result.json 
-│ └── Violation_Report.pdf 
+├── sample_outputs/
+│   ├── evidence.jpg
+│   ├── result.json
+│   └── Violation_Report.pdf
+
 └── output/
+```
 
 ---
 
